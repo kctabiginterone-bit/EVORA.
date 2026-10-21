@@ -1,0 +1,613 @@
+// ==========================================================
+// bookings.scss
+// Converted from the existing bookings.css fallback and booking styles.
+// ==========================================================
+
+$bg-deep: #080d1b;
+$bg-panel: #0d1325;
+$bg-soft: #11172a;
+$bg-strong: #1b2136;
+$border: var(--border, #252b43);
+$border-soft: #30364e;
+$border-panel: #20263b;
+$muted: var(--muted, #8d95ad);
+$text: var(--text, #f4f5fb);
+$purple: #8749ed;
+$purple-light: var(--purple-light, #b784ff);
+$purple-deep: #2a1f4d;
+$blue: #172b49;
+$blue-light: #75b8ff;
+$pink: #3b1c3d;
+$pink-light: #ee91e6;
+$green: #15372f;
+$green-light: #6ee0b4;
+$amber: var(--amber, #e8b45b);
+$amber-soft: #f0c975;
+$red: #ef4444;
+$danger: #f08b9f;
+$success: #74dbb1;
+
+/* ---------- 1) fallbacks ---------- */
+:where(.workspace-switcher) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 26px 0 24px;
+  padding: 12px;
+  border: 1px solid $border;
+  border-radius: 10px;
+  background: $bg-panel;
+
+  > span:nth-child(2) {
+    display: grid;
+    gap: 3px;
+    min-width: 0;
+  }
+}
+
+:where(.workspace-switcher small) {
+  color: $muted;
+  font-size: 11px;
+}
+
+:where(.push) {
+  margin-left: auto;
+}
+
+:where(.nav-spaced) {
+  margin-top: 26px;
+}
+
+:where(.nav-icon) {
+  display: inline-block;
+  width: 16px;
+  text-align: center;
+}
+
+:where(.nav-count) {
+  margin-left: auto;
+  padding: 2px 7px;
+  border-radius: 5px;
+  background: #2b2045;
+  color: #d8c2ff;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+:where(.help-symbol) {
+  display: block;
+  margin-bottom: 6px;
+  color: $purple-light;
+  font-size: 16px;
+}
+
+:where(.notification) {
+  position: relative;
+
+  i {
+    position: absolute;
+    top: 8px;
+    right: 9px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: $red;
+  }
+}
+
+:where(.user-avatar, .mini-avatar) {
+  display: inline-grid;
+  flex: 0 0 34px;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8c59e9, #3f4ca4);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+:where(.mini-avatar.large-avatar) {
+  flex-basis: 52px;
+  width: 52px;
+  height: 52px;
+  font-size: 15px;
+}
+
+:where(.purple-bg) {
+  background: $purple-deep;
+  color: #c6a7ff;
+}
+
+:where(.blue-bg) {
+  background: $blue;
+  color: $blue-light;
+}
+
+:where(.pink-bg) {
+  background: $pink;
+  color: $pink-light;
+}
+
+:where(.green-bg) {
+  background: $green;
+  color: $green-light;
+}
+
+:where(.amber-bg) {
+  background: #3b301d;
+  color: #f0c975;
+}
+
+:where(.stat-head) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #a3abc0;
+  font-size: 11px;
+}
+
+:where(.stat-icon) {
+  display: block;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+}
+
+:where(.stat-number) {
+  display: block;
+  margin: 10px 0 6px;
+  font-size: 26px;
+  font-weight: 650;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
+:where(.stat-card small) {
+  display: block;
+  font-size: 10px;
+}
+
+:where(.stat-bar) {
+  height: 5px;
+  margin-top: 14px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: $bg-strong;
+
+  i {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #8749ed, #b784ff);
+    transition: width 0.4s ease;
+  }
+}
+
+:where(.blue-bar i) {
+  background: linear-gradient(90deg, #4054bd, #75b8ff);
+}
+
+:where(.pink-bar i) {
+  background: linear-gradient(90deg, #d946a8, #ee91e6);
+}
+
+:where(.amber-bar i) {
+  background: linear-gradient(90deg, #e8b45b, #f0c975);
+}
+
+:where(.deadline) {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 6px 0 16px;
+
+  b {
+    display: grid;
+    flex: 0 0 46px;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 11px;
+    background: #1a1230;
+    color: #d8c2ff;
+    font-size: 20px;
+  }
+
+  span {
+    display: grid;
+    gap: 3px;
+  }
+
+  small {
+    color: $muted;
+    font-size: 11px;
+  }
+}
+
+:where(.disclaimer) {
+  margin: 0;
+  padding: 12px 20px 16px;
+  color: $muted;
+  font-size: 11px;
+}
+
+:where(.form-actions) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+:where(.panel-footer) {
+  width: 100%;
+  padding: 14px;
+  border: 0;
+  border-top: 1px solid #1c2337;
+  background: transparent;
+  color: $purple-light;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+:where(.recommendations) {
+  padding: 0 20px 10px;
+}
+
+:where(.search-box) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 2 1 260px;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid $border-soft;
+  border-radius: 8px;
+  background: $bg-deep;
+  color: $muted;
+
+  input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: $text;
+    font: inherit;
+    font-size: 12px;
+  }
+}
+
+:where(.conversation-search) {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 11px 12px;
+  border: 1px solid $border-soft;
+  border-radius: 8px;
+  outline: 0;
+  background: $bg-deep;
+  color: $text;
+}
+
+:where(.security-note) {
+  margin: 16px 0 0;
+  color: $muted;
+  font-size: 11px;
+}
+
+:where(.tiny) {
+  width: 30px;
+  height: 30px;
+}
+
+:where(.small-button) {
+  padding: 7px 12px;
+  border: 1px solid #343a55;
+  border-radius: 7px;
+  background: $bg-soft;
+  color: #d8dbea;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    border-color: #7250b5;
+  }
+}
+
+:where(.card-assignee) {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid $border-panel;
+  color: $muted;
+  font-size: 11px;
+}
+
+/* ---------- 2) booking feature ---------- */
+
+/* freelancer cards (Browse Freelancers) */
+.freelancer-card {
+  .role {
+    margin: 4px 0 8px;
+    color: #c6a7ff;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .bio {
+    margin: 0 0 4px;
+    color: $muted;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .available.busy {
+    color: $amber;
+  }
+
+  .freelancer-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 12px 0;
+    padding-top: 12px;
+    border-top: 1px solid $border-panel;
+    color: #c3c3d1;
+    font-size: 11px;
+
+    b {
+      font-size: 16px;
+    }
+
+    small {
+      color: $muted;
+      font-size: 11px;
+      font-weight: 400;
+    }
+  }
+
+  .button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+/* recommendation rows (overview) */
+.recommendation {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+
+  > span:nth-child(2) {
+    display: grid;
+    flex: 1;
+    gap: 2px;
+    min-width: 0;
+  }
+
+  b {
+    font-size: 12px;
+  }
+
+  small,
+  em {
+    color: $muted;
+    font-size: 11px;
+    font-style: normal;
+  }
+
+  .bk-actions {
+    flex: 0 0 auto;
+  }
+}
+
+/* bookings table */
+.bk-table {
+  td {
+    vertical-align: middle;
+  }
+}
+
+.bk-person {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+
+  > span:last-child {
+    display: grid;
+    gap: 2px;
+    min-width: 0;
+  }
+
+  b {
+    font-size: 12px;
+  }
+
+  small,
+  .bk-sub {
+    color: $muted;
+    font-size: 11px;
+  }
+}
+
+.bk-table .pill {
+  padding: 5px 9px;
+  font-size: 10px;
+}
+
+.bk-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.bk-accept {
+  border-color: #17402f;
+  background: #0f2a21;
+  color: $success;
+
+  &:hover {
+    border-color: #2f8f6a;
+  }
+}
+
+.bk-decline,
+.bk-cancel {
+  border-color: #4a2230;
+  background: #2a1119;
+  color: $danger;
+
+  &:hover {
+    border-color: #b4475e;
+  }
+}
+
+.pill.bk-muted {
+  background: #26262f;
+  color: #d6d6df;
+}
+
+/* project card: progress control for the assigned freelancer */
+.bk-progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid $border-panel;
+  color: $muted;
+  font-size: 11px;
+}
+
+.bk-select {
+  padding: 7px 10px;
+  border: 1px solid $border-soft;
+  border-radius: 7px;
+  background: $bg-deep;
+  color: $text;
+  font: inherit;
+  font-size: 11px;
+}
+
+/* profile: freelancer-only fields */
+.bk-fields {
+  display: grid;
+  gap: 16px;
+  padding-top: 18px;
+  border-top: 1px solid $border;
+}
+
+.bk-subhead {
+  margin: 0;
+  font-size: 14px;
+}
+
+.bk-hint {
+  margin: -8px 0 0;
+  font-size: 11px;
+}
+
+#profileMessage {
+  margin-right: auto;
+}
+
+/* booking modal */
+.bk-estimate {
+  min-height: 16px;
+  margin: 0;
+  color: #c6a7ff;
+  font-size: 12px;
+}
+
+#bookingModal {
+  select,
+  textarea,
+  input:not([type="hidden"]) {
+    color-scheme: dark;
+  }
+}
+
+@media (max-width: 640px) {
+  .bk-actions {
+    justify-content: flex-start;
+  }
+}
+
+/* log out (sidebar) */
+#logoutBtn:hover {
+  background: #2a1119;
+  color: #f4b6c2;
+}
+
+/* sidebar: keep the name and the role on separate lines */
+.sidebar-user > span:nth-child(2),
+.workspace-switcher > span:nth-child(2) {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  text-align: left;
+  line-height: 1.3;
+}
+
+.sidebar-user small,
+.workspace-switcher small {
+  display: block;
+}
+
+/* bookings filter */
+#bookingFilter {
+  padding: 10px 12px;
+  border: 1px solid $border-soft;
+  border-radius: 8px;
+  background: $bg-deep;
+  color: $text;
+  font: inherit;
+  font-size: 13px;
+  color-scheme: dark;
+}
+
+/* form fields: project modal, booking modal and profile get the same dark look */
+.modal-form,
+.profile-form {
+  input:not([type="hidden"]),
+  select,
+  textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 11px 12px;
+    border: 1px solid $border-soft;
+    border-radius: 7px;
+    outline: 0;
+    background: $bg-deep;
+    color: $text;
+    font-size: 12px;
+    color-scheme: dark;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: var(--purple, #8749ed);
+  }
+
+  textarea {
+    resize: vertical;
+  }
+}
+
+/* profile card: label on the left, value on the right */
+.profile-card > div:not(.profile-cover) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 0;
+}

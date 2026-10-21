@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evora | Client Dashboard</title>
+  <link rel="stylesheet" href="sass/style.css"><script src="js/client.js" defer>
+  </script>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">Evora.</div>
+    <p class="side-label">CLIENT WORKSPACE</p>
+    <nav>
+      <button class="nav-item active" data-section="overview">Overview</button>
+      <button class="nav-item" data-section="projects">My Projects</button>
+      <button class="nav-item" data-section="freelancers">Browse Freelancers</button>
+      <button class="nav-item" data-section="bookings">My Bookings</button>
+      <button class="nav-item" data-section="messages">Messages</button>
+      <button class="nav-item" data-section="profile">My Profile</button>
+      <button class="nav-item" data-section="settings">Settings</button>
+    </nav>
+    <p class="side-label">ACCOUNT</p>
+    <button class="nav-item" id="logoutBtn">Log Out</button>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <strong>Client Workspace</strong><br>
+        <small id="breadcrumb">Overview</small>
+      </div>
+      <span id="clientName">Loading account...</span>
+    </header>
+
+    <div class="content">
+      <section class="page active" id="page-overview">
+        <h1>Welcome back!</h1>
+        <p class="muted">Manage your projects and connect with talented freelancers.</p>
+
+        <div class="stats">
+          <article class="stat"><span>Total Projects</span><strong id="totalProjects">—</strong></article>
+          <article class="stat"><span>Active Projects</span><strong id="activeProjects">—</strong></article>
+          <article class="stat"><span>Pending Projects</span><strong id="pendingProjects">—</strong></article>
+          <article class="stat"><span>Bookings</span><strong id="totalBookings">—</strong></article>
+        </div>
+
+        <div class="panel">
+          <div class="section-heading">
+            <div>
+              <h2>Recent Projects</h2>
+              <p class="muted">Your latest project activity.</p>
+            </div>
+            <button class="button" data-go="projects">View Projects</button>
+          </div>
+          <div id="recentProjects" class="project-list">
+            <p class="empty-state">Loading your projects...</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" id="page-projects">
+        <div class="section-heading">
+          <div><h1>My Projects</h1><p class="muted">Projects you have posted.</p></div>
+          <button class="button" data-go="post-project">+ Post Project</button>
+        </div>
+        <div id="myProjectsList" class="project-list">
+          <p class="empty-state">Loading your projects...</p>
+        </div>
+      </section>
+
+      <section class="page" id="page-post-project">
+        <h1>Post a Project</h1>
+        <p class="muted">Describe the work you need help with.</p>
+        <form id="projectForm" class="panel">
+          <label>Project title
+            <input id="projectTitle" maxlength="80" required>
+          </label>
+          <div class="form-grid">
+            <label>Category
+              <select id="projectCategory">
+                <option>Design &amp; Creative</option>
+                <option>Development</option>
+                <option>Marketing</option>
+                <option>Writing</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label>Budget (₱)
+              <input id="projectBudget" type="number" min="1" required>
+            </label>
+          </div>
+          <label>Deadline
+            <input id="projectDeadline" type="date" required>
+          </label>
+          <label>Description
+            <textarea id="projectDescription" rows="4" required></textarea>
+          </label>
+          <p id="projectMessage" class="muted"></p>
+          <button class="button" type="submit">Create Project</button>
+        </form>
+      </section>
+
+      <section class="page" id="page-freelancers">
+        <h1>Browse Freelancers</h1>
+        <p class="muted">Discover people who can help with your projects.</p>
+        <input id="freelancerSearch" type="search" placeholder="Search freelancer skills or name...">
+        <div id="freelancersList" class="freelancer-list">
+          <p class="empty-state">Freelancer directory API needs to be connected.</p>
+        </div>
+      </section>
+
+      <section class="page" id="page-bookings">
+        <h1>My Bookings</h1>
+        <p class="muted">Track your freelancer booking requests.</p>
+        <div id="myBookingsList" class="project-list">
+          <p class="empty-state">Booking API needs to be connected.</p>
+        </div>
+      </section>
+
+      <section class="page" id="page-messages">
+        <h1>Messages</h1>
+        <div class="panel">
+          <p class="muted">Your messaging feature will appear here once connected to its backend API.</p>
+        </div>
+      </section>
+
+      <section class="page" id="page-profile">
+        <h1>My Profile</h1>
+        <div class="panel">
+          <p class="muted">Your account details are managed by your existing login system.</p>
+          <p id="profileInfo">Loading account information...</p>
+        </div>
+      </section>
+
+      <section class="page" id="page-settings">
+        <h1>Settings</h1>
+        <div class="panel">
+          <p class="muted">Account security and notification preferences can be connected here.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<script>
+  // Client-side navigation only; it does not replace server-side authorization.
+  const pages = document.querySelectorAll('.page');
+  const navItems = document.querySelectorAll('.nav-item[data-section]');
+  const breadcrumb = document.getElementById('breadcrumb');
+
+  function showPage(name) {
+    const target = document.getElementById('page-' + name);
+    if (!target) return;
+
+    pages.forEach(page => page.classList.toggle('active', page === target));
+    navItems.forEach(item =>
+      item.classList.toggle('active', item.dataset.section === name)
+    );
+    breadcrumb.textContent = target.dataset.title ||
+      navItems.namedItem?.(name) || name.replace('-', ' ');
+  }
+
+  navItems.forEach(item =>
+    item.addEventListener('click', () => showPage(item.dataset.section))
+  );
+
+  document.querySelectorAll('[data-go]').forEach(button =>
+    button.addEventListener('click', () => showPage(button.dataset.go))
+  );
+
+  // Connect API calls after confirming your existing endpoint filenames.
+  console.info('Client dashboard UI loaded.');
+</script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evora — Find Talent. Manage Projects.</title>
+    <link rel="stylesheet" href="sass/styles.css">
+</head>
+<body>
+
+<div class="site-shell">
+    <div class="top-line"></div>
+
+    <!-- NAVIGATION BAR -->
+    <header>
+        <a class="brand" href="#home" aria-label="Evora home">
+            <span class="brand-mark">E</span>
+            <span>Evora</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Toggle navigation" aria-expanded="false">
+            ☰
+        </button>
+
+        <nav id="mainNav" aria-label="Main navigation">
+            <a href="#home">Home</a>
+            <a href="#browse" data-info="Browse Freelancers">Browse Freelancers</a>
+            <a href="#how" data-info="How It Works">How It Works</a>
+            <a href="#about">About us</a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="btn btn-dark" data-modal="login">Log In</button>
+            <button class="btn btn-primary" data-modal="signup">Sign Up</button>
+        </div>
+    </header>
+
+    <!-- HOME / HERO SECTION -->
+    <main class="hero" id="home">
+        <section class="hero-copy">
+            <div class="eyebrow">CONNECT. COLLABORATE. SUCCEED</div>
+
+            <h1>
+                Find Talent.<br>
+                Manage <span>Projects.</span><br>
+                Get Things Done.
+            </h1>
+
+            <p>
+                Evora helps you connect with skilled freelancers,
+                manage your projects, and achieve your goals with confidence.
+            </p>
+        </section>
+
+        <!-- HERO ILLUSTRATION -->
+        <section class="visual" aria-label="Evora project workspace illustration">
+            <div class="orbit one"></div>
+            <div class="orbit two"></div>
+            <div class="orbit three"></div>
+            <div class="glow"></div>
+
+            <i class="spark s1"></i>
+            <i class="spark s2"></i>
+            <i class="spark s3"></i>
+            <i class="spark s4"></i>
+
+            <div class="float-card card-user">
+                <svg viewBox="0 0 40 40" fill="currentColor">
+                    <circle cx="20" cy="12" r="8"/>
+                    <path d="M5 34c0-8 6-13 15-13s15 5 15 13v2H5z"/>
+                </svg>
+            </div>
+
+            <div class="float-card card-chart">
+                <svg viewBox="0 0 40 40" fill="currentColor">
+                    <rect x="3" y="23" width="7" height="13" rx="2"/>
+                    <rect x="16" y="14" width="7" height="22" rx="2"/>
+                    <rect x="29" y="5" width="7" height="31" rx="2"/>
+                </svg>
+            </div>
+
+            <div class="float-card card-check">
+                <svg viewBox="0 0 40 40" fill="none"
+                     stroke="currentColor" stroke-width="5"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 21l10 10L34 10"/>
+                </svg>
+            </div>
+
+            <div class="float-card card-chat">
+                <svg viewBox="0 0 40 40" fill="currentColor">
+                    <rect x="4" y="6" width="32" height="8" rx="2"/>
+                    <rect x="8" y="17" width="28" height="8" rx="2"/>
+                    <path d="M4 28h25l-4 6H4z"/>
+                </svg>
+            </div>
+
+            <div class="laptop-wrap">
+                <div class="laptop-screen">
+                    <div class="screen-logo">E</div>
+                </div>
+                <div class="laptop-base"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ABOUT US SECTION -->
+    <section class="about-section" id="about">
+        <div class="about-card">
+
+            <h2>About Us</h2>
+
+            <p class="about-tagline">
+                Building better connection between talent and opportunity.
+            </p>
+
+            <p class="about-description">
+                We bring skilled freelancers and ambitious teams together
+                to turn ideas into meaningful work.
+            </p>
+
+            <div class="about-features">
+
+                <!-- TRUSTED TALENT -->
+                <article class="about-feature">
+                    <svg viewBox="0 0 72 66" fill="none"
+                         stroke="currentColor" stroke-width="4.5"
+                         stroke-linecap="round" stroke-linejoin="round"
+                         aria-hidden="true">
+                        <ellipse cx="25" cy="17" rx="7" ry="9"/>
+                        <path d="M9 52c0-9 7-16 16-16s16 7 16 16v2H9z"/>
+                        <ellipse cx="53" cy="15" rx="7" ry="9"/>
+                        <path d="M36 51c1-8 8-14 17-14s16 7 16 15v2H36z"/>
+                    </svg>
+                    <span>Trusted Talent</span>
+                </article>
+
+                <!-- MEANINGFUL WORK -->
+                <article class="about-feature">
+                    <svg viewBox="0 0 72 66" aria-hidden="true">
+                        <circle cx="36" cy="33" r="31" fill="currentColor"/>
+                        <path d="M36 12l6.4 13 14.4 2.1-10.4 10.1
+                                 2.5 14.3L36 44.7 23.1 51.5
+                                 25.6 37.2 15.2 27.1 29.6 25z"
+                              fill="#101024"/>
+                    </svg>
+                    <span>Meaningful Work</span>
+                </article>
+
+                <!-- BUILT TO GROW -->
+                <article class="about-feature">
+                    <svg viewBox="0 0 72 66" fill="currentColor"
+                         aria-hidden="true">
+                        <rect x="6" y="31" width="16" height="35"/>
+                        <rect x="30" y="0" width="16" height="66"/>
+                        <rect x="54" y="18" width="16" height="48"/>
+                    </svg>
+                    <span>Built to Grow</span>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="bottom-glow"></div>
+</div>
+
+<!-- HOW IT WORKS SECTION -->
+<section class="how-section" id="how">
+
+    <div class="how-heading">
+        <h2>How It Works</h2>
+        <p>A simple way to turn ideas into results.</p>
+    </div>
+
+    <div class="how-cards">
+
+        <!-- STEP 1: POST A PROJECT -->
+        <article class="how-card">
+            <div class="step-number">1</div>
+
+            <div class="how-icon">
+                <svg viewBox="0 0 100 100"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="7"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     aria-hidden="true">
+                    <path d="M22 12h37l27 26v48a7 7 0 0 1-7 7H22a9 9 0 0 1-9-9V21a9 9 0 0 1 9-9z"/>
+                    <path d="M59 13v25h26"/>
+                    <path d="M30 60h40"/>
+                    <path d="M30 76h40"/>
+                </svg>
+            </div>
+
+            <h3>Post a Project</h3>
+            <p>Share your goals and find<br class="desktop-break"> the right purpose.</p>
+        </article>
+
+        <!-- STEP 2: CONNECT AND COLLABORATE -->
+        <article class="how-card">
+            <div class="step-number">2</div>
+
+            <div class="how-icon">
+                <svg viewBox="0 0 100 100"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="7"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     aria-hidden="true">
+                    <path d="M14 17h55a12 12 0 0 1 12 12v8H54a12 12 0 0 0-12 12v24H28L13 85V73a12 12 0 0 1-11-12V29a12 12 0 0 1 12-12z"
+                          transform="translate(5 0)"/>
+                    <path d="M57 43h24a12 12 0 0 1 12 12v19a12 12 0 0 1-12 12v10L64 85H57a12 12 0 0 1-12-12V55a12 12 0 0 1 12-12z"/>
+                    <path d="M69 56v10"/>
+                    <path d="M69 74v1"/>
+                </svg>
+            </div>
+
+            <h3>Connect &amp; Collaborate</h3>
+            <p>Work together with trusted<br class="desktop-break"> professionals.</p>
+        </article>
+
+        <!-- STEP 3: GET THINGS DONE -->
+        <article class="how-card">
+            <div class="step-number">3</div>
+
+            <div class="how-icon">
+                <svg viewBox="0 0 100 100"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="4"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     aria-hidden="true">
+                    <circle cx="50" cy="50" r="43"/>
+                    <path d="M29 51l15 16 29-34"
+                          stroke-width="6"/>
+                </svg>
+            </div>
+
+            <h3>Get Things Done</h3>
+            <p>Track progress and deliver<br class="desktop-break"> great results.</p>
+        </article>
+
+    </div>
+
+    <div class="how-action">
+        <button class="btn btn-primary" data-modal="signup">
+            Get Started
+        </button>
+    </div>
+
+</section>
+<!-- LOGIN / SIGNUP MODAL -->
+<div class="modal-backdrop" id="modalBackdrop"
+     role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+
+    <div class="modal">
+        <button class="close-modal" id="closeModal"
+                aria-label="Close dialog">×</button>
+
+        <h2 id="modalTitle">Welcome back</h2>
+
+        <p id="modalDescription">
+            Log in to continue to your Evora workspace.
+        </p>
+
+        <form id="authForm">
+            <input class="field" id="nameField" name="name" type="text"
+                   placeholder="Full name" autocomplete="name" hidden>
+
+            <select class="field" id="roleField" name="role" aria-label="Account type" hidden>
+                <option value="client">I want to hire freelancers</option>
+                <option value="freelancer">I am a freelancer</option>
+            </select>
+
+            <input class="field" id="emailField" name="email" type="email"
+                   placeholder="Email address" autocomplete="email" required>
+
+            <input class="field" id="passwordField" name="password" type="password"
+                   placeholder="Password (at least 6 characters)"
+                   minlength="6" autocomplete="current-password" required>
+
+            <button class="btn btn-primary" type="submit" id="submitAuth">
+                Log In
+            </button>
+
+            <div class="form-message" id="formMessage" aria-live="polite"></div>
+        </form>
+
+        <p class="modal-switch" id="modalSwitch">
+            New to Evora?
+            <a href="#" id="switchMode">Create an account</a>
+        </p>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

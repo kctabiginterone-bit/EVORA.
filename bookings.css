@@ -1,0 +1,556 @@
+/* ---------- 1) fallbacks ---------- */
+:where(.workspace-switcher) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 26px 0 24px;
+  padding: 12px;
+  border: 1px solid var(--border, #252b43);
+  border-radius: 10px;
+  background: #0d1325;
+}
+:where(.workspace-switcher) > span:nth-child(2) {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+:where(.workspace-switcher small) {
+  color: var(--muted, #8d95ad);
+  font-size: 11px;
+}
+
+:where(.push) {
+  margin-left: auto;
+}
+
+:where(.nav-spaced) {
+  margin-top: 26px;
+}
+
+:where(.nav-icon) {
+  display: inline-block;
+  width: 16px;
+  text-align: center;
+}
+
+:where(.nav-count) {
+  margin-left: auto;
+  padding: 2px 7px;
+  border-radius: 5px;
+  background: #2b2045;
+  color: #d8c2ff;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+:where(.help-symbol) {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--purple-light, #b784ff);
+  font-size: 16px;
+}
+
+:where(.notification) {
+  position: relative;
+}
+:where(.notification) i {
+  position: absolute;
+  top: 8px;
+  right: 9px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ef4444;
+}
+
+:where(.user-avatar, .mini-avatar) {
+  display: inline-grid;
+  flex: 0 0 34px;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8c59e9, #3f4ca4);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+:where(.mini-avatar.large-avatar) {
+  flex-basis: 52px;
+  width: 52px;
+  height: 52px;
+  font-size: 15px;
+}
+
+:where(.purple-bg) {
+  background: #2a1f4d;
+  color: #c6a7ff;
+}
+
+:where(.blue-bg) {
+  background: #172b49;
+  color: #75b8ff;
+}
+
+:where(.pink-bg) {
+  background: #3b1c3d;
+  color: #ee91e6;
+}
+
+:where(.green-bg) {
+  background: #15372f;
+  color: #6ee0b4;
+}
+
+:where(.amber-bg) {
+  background: #3b301d;
+  color: #f0c975;
+}
+
+:where(.stat-head) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #a3abc0;
+  font-size: 11px;
+}
+
+:where(.stat-icon) {
+  display: block;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+}
+
+:where(.stat-number) {
+  display: block;
+  margin: 10px 0 6px;
+  font-size: 26px;
+  font-weight: 650;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
+:where(.stat-card small) {
+  display: block;
+  font-size: 10px;
+}
+
+:where(.stat-bar) {
+  height: 5px;
+  margin-top: 14px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #1b2136;
+}
+:where(.stat-bar) i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #8749ed, #b784ff);
+  transition: width 0.4s ease;
+}
+
+:where(.blue-bar i) {
+  background: linear-gradient(90deg, #4054bd, #75b8ff);
+}
+
+:where(.pink-bar i) {
+  background: linear-gradient(90deg, #d946a8, #ee91e6);
+}
+
+:where(.amber-bar i) {
+  background: linear-gradient(90deg, #e8b45b, #f0c975);
+}
+
+:where(.deadline) {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 6px 0 16px;
+}
+:where(.deadline) b {
+  display: grid;
+  flex: 0 0 46px;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 11px;
+  background: #1a1230;
+  color: #d8c2ff;
+  font-size: 20px;
+}
+:where(.deadline) span {
+  display: grid;
+  gap: 3px;
+}
+:where(.deadline) small {
+  color: var(--muted, #8d95ad);
+  font-size: 11px;
+}
+
+:where(.disclaimer) {
+  margin: 0;
+  padding: 12px 20px 16px;
+  color: var(--muted, #8d95ad);
+  font-size: 11px;
+}
+
+:where(.form-actions) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+:where(.panel-footer) {
+  width: 100%;
+  padding: 14px;
+  border: 0;
+  border-top: 1px solid #1c2337;
+  background: transparent;
+  color: var(--purple-light, #b784ff);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+:where(.recommendations) {
+  padding: 0 20px 10px;
+}
+
+:where(.search-box) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 2 1 260px;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid #30364e;
+  border-radius: 8px;
+  background: #080d1b;
+  color: var(--muted, #8d95ad);
+}
+:where(.search-box) input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text, #f4f5fb);
+  font: inherit;
+  font-size: 12px;
+}
+
+:where(.conversation-search) {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 11px 12px;
+  border: 1px solid #30364e;
+  border-radius: 8px;
+  outline: 0;
+  background: #080d1b;
+  color: var(--text, #f4f5fb);
+}
+
+:where(.security-note) {
+  margin: 16px 0 0;
+  color: var(--muted, #8d95ad);
+  font-size: 11px;
+}
+
+:where(.tiny) {
+  width: 30px;
+  height: 30px;
+}
+
+:where(.small-button) {
+  padding: 7px 12px;
+  border: 1px solid #343a55;
+  border-radius: 7px;
+  background: #11172a;
+  color: #d8dbea;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+:where(.small-button):hover {
+  border-color: #7250b5;
+}
+
+:where(.card-assignee) {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #20263b;
+  color: var(--muted, #8d95ad);
+  font-size: 11px;
+}
+
+/* ---------- 2) booking feature ---------- */
+/* freelancer cards (Browse Freelancers) */
+.freelancer-card .role {
+  margin: 4px 0 8px;
+  color: #c6a7ff;
+  font-size: 12px;
+  font-weight: 500;
+}
+.freelancer-card .bio {
+  margin: 0 0 4px;
+  color: var(--muted, #8d95ad);
+  font-size: 11px;
+  line-height: 1.5;
+}
+.freelancer-card .available.busy {
+  color: var(--amber, #e8b45b);
+}
+.freelancer-card .freelancer-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 12px 0;
+  padding-top: 12px;
+  border-top: 1px solid #20263b;
+  color: #c3c3d1;
+  font-size: 11px;
+}
+.freelancer-card .freelancer-meta b {
+  font-size: 16px;
+}
+.freelancer-card .freelancer-meta small {
+  color: var(--muted, #8d95ad);
+  font-size: 11px;
+  font-weight: 400;
+}
+.freelancer-card .button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* recommendation rows (overview) */
+.recommendation {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+}
+.recommendation > span:nth-child(2) {
+  display: grid;
+  flex: 1;
+  gap: 2px;
+  min-width: 0;
+}
+.recommendation b {
+  font-size: 12px;
+}
+.recommendation small,
+.recommendation em {
+  color: var(--muted, #8d95ad);
+  font-size: 11px;
+  font-style: normal;
+}
+.recommendation .bk-actions {
+  flex: 0 0 auto;
+}
+
+/* bookings table */
+.bk-table td {
+  vertical-align: middle;
+}
+
+.bk-person {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.bk-person > span:last-child {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+.bk-person b {
+  font-size: 12px;
+}
+.bk-person small,
+.bk-person .bk-sub {
+  color: var(--muted, #8d95ad);
+  font-size: 11px;
+}
+
+.bk-table .pill {
+  padding: 5px 9px;
+  font-size: 10px;
+}
+
+.bk-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.bk-accept {
+  border-color: #17402f;
+  background: #0f2a21;
+  color: #74dbb1;
+}
+.bk-accept:hover {
+  border-color: #2f8f6a;
+}
+
+.bk-decline,
+.bk-cancel {
+  border-color: #4a2230;
+  background: #2a1119;
+  color: #f08b9f;
+}
+.bk-decline:hover,
+.bk-cancel:hover {
+  border-color: #b4475e;
+}
+
+.pill.bk-muted {
+  background: #26262f;
+  color: #d6d6df;
+}
+
+/* project card: progress control for the assigned freelancer */
+.bk-progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #20263b;
+  color: var(--muted, #8d95ad);
+  font-size: 11px;
+}
+
+.bk-select {
+  padding: 7px 10px;
+  border: 1px solid #30364e;
+  border-radius: 7px;
+  background: #080d1b;
+  color: var(--text, #f4f5fb);
+  font: inherit;
+  font-size: 11px;
+}
+
+/* profile: freelancer-only fields */
+.bk-fields {
+  display: grid;
+  gap: 16px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border, #252b43);
+}
+
+.bk-subhead {
+  margin: 0;
+  font-size: 14px;
+}
+
+.bk-hint {
+  margin: -8px 0 0;
+  font-size: 11px;
+}
+
+#profileMessage {
+  margin-right: auto;
+}
+
+/* booking modal */
+.bk-estimate {
+  min-height: 16px;
+  margin: 0;
+  color: #c6a7ff;
+  font-size: 12px;
+}
+
+#bookingModal select,
+#bookingModal textarea,
+#bookingModal input:not([type=hidden]) {
+  color-scheme: dark;
+}
+
+@media (max-width: 640px) {
+  .bk-actions {
+    justify-content: flex-start;
+  }
+}
+/* log out (sidebar) */
+#logoutBtn:hover {
+  background: #2a1119;
+  color: #f4b6c2;
+}
+
+/* sidebar: keep the name and the role on separate lines */
+.sidebar-user > span:nth-child(2),
+.workspace-switcher > span:nth-child(2) {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  text-align: left;
+  line-height: 1.3;
+}
+
+.sidebar-user small,
+.workspace-switcher small {
+  display: block;
+}
+
+/* bookings filter */
+#bookingFilter {
+  padding: 10px 12px;
+  border: 1px solid #30364e;
+  border-radius: 8px;
+  background: #080d1b;
+  color: var(--text, #f4f5fb);
+  font: inherit;
+  font-size: 13px;
+  color-scheme: dark;
+}
+
+/* form fields: project modal, booking modal and profile get the same dark look */
+.modal-form input:not([type=hidden]),
+.modal-form select,
+.modal-form textarea,
+.profile-form input:not([type=hidden]),
+.profile-form select,
+.profile-form textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid #30364e;
+  border-radius: 7px;
+  outline: 0;
+  background: #080d1b;
+  color: var(--text, #f4f5fb);
+  font-size: 12px;
+  color-scheme: dark;
+}
+.modal-form input:focus,
+.modal-form select:focus,
+.modal-form textarea:focus,
+.profile-form input:focus,
+.profile-form select:focus,
+.profile-form textarea:focus {
+  border-color: var(--purple, #8749ed);
+}
+.modal-form textarea,
+.profile-form textarea {
+  resize: vertical;
+}
+
+/* profile card: label on the left, value on the right */
+.profile-card > div:not(.profile-cover) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 0;
+}/*# sourceMappingURL=bookings.css.map */
